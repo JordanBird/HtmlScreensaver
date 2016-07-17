@@ -1,0 +1,3 @@
+﻿[NAME]ISS Primary Stream[/NAME][DESCRIPTION]This is the primary stream for the HDEV project. This will show images of the earth as the ISS passes over.[/DESCRIPTION][URL]http://www.ustream.tv/embed/17074538?v=3&controls=false&autoplay=true&volume=0[/URL]
+[NAME]ISS Tracking Stream[/NAME][DESCRIPTION]This will show the current location of the ISS and it's trajectory.[/DESCRIPTION][URL]http://www.lizard-tail.com/isana/tracking/[/URL]
+[NAME]ISS Secondary Stream[/NAME][DESCRIPTION]This is the secondary stream for the HDEV project. This will normally show shots of the ISS over the earth and sometimes the inside of the ISS itself.[/DESCRIPTION][URL]http://www.ustream.tv/embed/9408562?html5ui?v=3&controls=false&autoplay=true&volume=0[/URL]
