@@ -24,7 +24,7 @@ namespace HTMLScreenSaver.Helpers
             SetCefSetting(cefSettings, "enable-sandbox", "0");
             SetCefSetting(cefSettings, "no-sandbox", "1");
 
-            Cef.Initialize(cefSettings, false, false);
+            Cef.Initialize(cefSettings);
         }
 
         private void SetCefSetting(CefSettings settings, string setting, string value)
