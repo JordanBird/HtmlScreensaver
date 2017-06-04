@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace HTMLScreenSaver.Properties {
+namespace HTMLScreensaver.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace HTMLScreenSaver.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("HTMLScreenSaver.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("HTMLScreensaver.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -57,17 +57,6 @@ namespace HTMLScreenSaver.Properties {
             }
             set {
                 resourceCulture = value;
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to [NAME]ISS Primary Stream[/NAME][DESCRIPTION]This is the primary stream for the HDEV project. This will show images of the earth as the ISS passes over.[/DESCRIPTION][URL]http://www.ustream.tv/embed/17074538?v=3&amp;amp;controls=false&amp;autoplay=true&amp;volume=0[/URL]
-        ///[NAME]ISS Tracking Stream[/NAME][DESCRIPTION]This will show the current location of the ISS and it&apos;s trajectory.[/DESCRIPTION][URL]http://www.lizard-tail.com/isana/tracking/[/URL]
-        ///[NAME]ISS Secondary Stream[/NAME][DESCRIPTION]This is the secondary str [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string Suggestions {
-            get {
-                return ResourceManager.GetString("Suggestions", resourceCulture);
             }
         }
     }
