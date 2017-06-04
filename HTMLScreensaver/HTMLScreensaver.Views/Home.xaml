@@ -1,0 +1,15 @@
+﻿<Window x:Class="HTMLScreensaver.Views.Home"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HTMLScreensaver.Views"
+        mc:Ignorable="d"
+        Title="Home" Height="350" Width="525">
+    <Grid>
+        <Label Content="HTML Screensaver" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Button x:Name="btnScreensaver" Command="{Binding Path=OpenScreensaverCommand}" Content="Screensaver" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Width="100"/>
+        <Button x:Name="btnConfigure" Command="{Binding Path=OpenConfigureCommand}" Content="Configure" HorizontalAlignment="Left" Margin="115,41,0,0" VerticalAlignment="Top" Width="100"/>
+        <Button x:Name="btnIdentify" Command="{Binding Path=OpenIdentifyCommand}" Content="Identify" HorizontalAlignment="Left" Margin="220,41,0,0" VerticalAlignment="Top" Width="100"/>
+    </Grid>
+</Window>
