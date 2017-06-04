@@ -137,9 +137,9 @@
       <Project>{36EBE2BF-BE2D-447C-AE31-057A06B20C0B}</Project>
       <Name>HTMLScreensaver.Controllers</Name>
     </ProjectReference>
-    <ProjectReference Include="..\HTMLScreensaver.Views\HTMLScreenSaver.Views.csproj">
+    <ProjectReference Include="..\HTMLScreensaver.Views\HTMLScreensaver.Views.csproj">
       <Project>{233bd8e9-7623-439c-9d56-bbeb543b7e06}</Project>
-      <Name>HTMLScreenSaver.Views</Name>
+      <Name>HTMLScreensaver.Views</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

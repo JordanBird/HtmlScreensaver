@@ -1,4 +1,5 @@
 ﻿using HTMLScreensaver.Controllers;
+using HTMLScreensaver.Services;
 using HTMLScreensaver.Views;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,8 @@ namespace HTMLScreensaver.Controllers
         public void Start(IEnumerable<string> arguments)
         {
             var argument = arguments.Count() == 0 ? "" : arguments.FirstOrDefault().ToLower().Substring(0, 2);
+
+            new CefSharpService().InitCEF();
 
             switch (argument)
             {

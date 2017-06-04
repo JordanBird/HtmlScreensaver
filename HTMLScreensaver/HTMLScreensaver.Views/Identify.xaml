@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Identify" Height="350" Width="525" Background="Transparent" WindowStyle="None" AllowsTransparency="True" Topmost="True">
     <Grid>
-        <Label x:Name="lblMonitorIdentity" Content="Identity" HorizontalAlignment="Center" Margin="0,0,0,-1" VerticalAlignment="Center" Width="500" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="100" Foreground="White" FontSize="48">
+        <Label x:Name="lblMonitorIdentity" Content="{Binding MonitorName}" HorizontalAlignment="Center" Margin="0,0,0,-1" VerticalAlignment="Center" Width="500" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="100" Foreground="White" FontSize="48">
             <Label.Effect>
                 <DropShadowEffect BlurRadius="1" Direction="314" ShadowDepth="1"/>
             </Label.Effect>

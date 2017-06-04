@@ -94,7 +94,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\HTMLScreenSaver.Models\HTMLScreensaver.Models.csproj">
+    <ProjectReference Include="..\HTMLScreensaver.Models\HTMLScreensaver.Models.csproj">
       <Project>{6939F140-8E49-449F-A0DF-485CE7D35CF9}</Project>
       <Name>HTMLScreensaver.Models</Name>
     </ProjectReference>
