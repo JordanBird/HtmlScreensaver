@@ -23,9 +23,14 @@ namespace HTMLScreensaver.Controllers
             foreach (Screen screen in Screen.AllScreens)
             {
                 var screenSettings = settings.MonitorSettings.FirstOrDefault(x => x.MonitorName == screen.DeviceName);
-                var colours = screenSettings?.InitialBackgroundColour.Replace("rgba", "").Trim('(', ')').Split(',');
-                var colour = colours.Length < 4 ? "Black" : Color.FromArgb(byte.Parse(colours[0]), byte.Parse(colours[1]), byte.Parse(colours[2]), byte.Parse(colours[3])).ToString();
+                var colour = "Black"; //TODO: Load this from a global settings file managed by the user.
 
+                if (screenSettings != null)
+                {
+                    var colours = screenSettings?.InitialBackgroundColour.Replace("rgba", "").Trim('(', ')').Split(',');
+                    colour = colours.Length < 4 ? "Black" : Color.FromArgb(byte.Parse(colours[0]), byte.Parse(colours[1]), byte.Parse(colours[2]), byte.Parse(colours[3])).ToString();
+                }
+                
                 Screensaver screensaver = new Screensaver()
                 {
                     Left = screen.WorkingArea.Left,
