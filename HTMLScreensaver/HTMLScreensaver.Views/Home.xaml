@@ -5,16 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HTMLScreensaver.Views"
         mc:Ignorable="d"
-        Title="Home" Height="272" Width="292" ResizeMode="NoResize">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="189*"/>
-            <ColumnDefinition Width="86*"/>
-        </Grid.ColumnDefinitions>
-        <Label Content="HTML Screensaver" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <Button x:Name="btnScreensaver" Command="{Binding Path=OpenScreensaverCommand}" Content="Screensaver" HorizontalAlignment="Left" Margin="10,123,0,0" VerticalAlignment="Top" Width="255" Height="30" Grid.ColumnSpan="2"/>
-        <Button x:Name="btnConfigure" Command="{Binding Path=OpenConfigureCommand}" Content="Configure" HorizontalAlignment="Left" Margin="10,158,0,0" VerticalAlignment="Top" Width="255" Height="30" Grid.ColumnSpan="2"/>
-        <Button x:Name="btnIdentify" Command="{Binding Path=OpenIdentifyCommand}" Content="Identify" HorizontalAlignment="Left" Margin="10,193,0,0" VerticalAlignment="Top" Width="255" Height="30" Grid.ColumnSpan="2"/>
-        <TextBlock HorizontalAlignment="Left" Margin="10,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="82" Width="255" TextAlignment="Justify" Grid.ColumnSpan="2"><Run Text="Welcome to the HTMLScreensaver developer view."/><LineBreak/><Run/><LineBreak/><Run Text="The buttons below will open the corresponding views for testing."/></TextBlock>
-    </Grid>
+        Title="Home" SizeToContent="Height" Width="210" ResizeMode="NoResize">
+    <StackPanel Margin="10">
+        <Label Content="HTML Screensaver" VerticalAlignment="Top" FontWeight="Bold" Margin="0,0,0,10" />
+        <TextBlock Style="{StaticResource Paragraph}" TextWrapping="Wrap" TextAlignment="Justify" Margin="0,0,0,10"><Run Text="Welcome to the HTMLScreensaver developer view."/><LineBreak/><Run/><LineBreak/><Run Text="The buttons below will open the corresponding views for testing."/></TextBlock>
+        <Button x:Name="btnScreensaver" Command="{Binding OpenScreensaverCommand}" Content="Screensaver" Padding="5" Margin="0,0,0,5" />
+        <Button x:Name="btnConfigure" Command="{Binding Path=OpenConfigureCommand}" Content="Configure" Padding="5" Margin="0,0,0,5" />
+        <Button x:Name="btnIdentify" Command="{Binding Path=OpenIdentifyCommand}" Content="Identify" Padding="5" Margin="0,0,0,5" />
+    </StackPanel>
 </Window>

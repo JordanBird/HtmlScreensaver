@@ -4,24 +4,59 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:wpf="clr-namespace:CefSharp.Wpf;assembly=CefSharp.Wpf"
         xmlns:local="clr-namespace:HTMLScreensaver.Views"
         mc:Ignorable="d"
-        Title="Configure" Height="350" Width="525">
-    <Grid>
-        <ListBox Margin="20,20,337,20" ItemsSource="{Binding MonitorNames}" SelectedValue="{Binding MonitorName}">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding}" />
-                    </StackPanel>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
-        <Label x:Name="lblMonitorName" Content="{Binding Path=MonitorName}" HorizontalAlignment="Left" Margin="185,20,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <Button Content="Save"  Command="{Binding Path=SaveCommand}" CommandParameter="{Binding Monitors}" HorizontalAlignment="Left" Margin="432,289,0,0" VerticalAlignment="Top" Width="75"/>
-        <Label Content="Monitor URL" HorizontalAlignment="Left" Margin="185,46,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtMonitorURL" HorizontalAlignment="Left" Height="23" Margin="185,72,0,0" TextWrapping="Wrap" Text="{Binding MonitorURL}" VerticalAlignment="Top" Width="322"/>
-        <xctk:ColorPicker Name="ClrPcker_Background" SelectedColor="{Binding MonitorColour}" Margin="185,126,10,163" DisplayColorAndName="True" ColorMode="ColorCanvas"></xctk:ColorPicker>
-        <Label x:Name="lblBackgroundColour" Content="Background Colour" HorizontalAlignment="Left" Margin="185,100,0,0" VerticalAlignment="Top"/>
+        Title="Configure" Height="400" Width="525">
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Label Content="Monitors" Grid.Row="0"></Label>
+            <ListBox ItemsSource="{Binding MonitorNames}" SelectedValue="{Binding MonitorName}" Grid.Row="1">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Grid>
+
+        <Grid Grid.Row="0" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Label Content="Preview" Grid.Row="0"></Label>
+            <wpf:ChromiumWebBrowser x:Name="Browser" Address="{Binding MonitorURL}" Grid.Row="1"/>
+        </Grid>
+
+        <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+            <Label x:Name="lblMonitorName" Content="{Binding Path=MonitorName, FallbackValue='Monitor Value'}"/>
+
+            <Label x:Name="lblMonitorURL" Content="Monitor URL" HorizontalContentAlignment="Stretch" />
+            <TextBox x:Name="txtMonitorURL" Text="{Binding MonitorURL}" HorizontalContentAlignment="Stretch" AllowDrop="True"/>
+
+            <Label x:Name="lblBackgroundColour" Content="Background Colour" HorizontalContentAlignment="Stretch"/>
+            <xctk:ColorPicker Name="ClrPcker_Background" SelectedColor="{Binding MonitorColour}" DisplayColorAndName="True" ColorMode="ColorCanvas" Width="Auto" Height="28" HorizontalContentAlignment="Stretch"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
+            <Button Content="Save" Command="{Binding SaveCommand}" CommandParameter="{Binding Monitors}" Width="76" VerticalContentAlignment="Bottom" HorizontalAlignment="Right"/>
+        </StackPanel>
     </Grid>
 </Window>

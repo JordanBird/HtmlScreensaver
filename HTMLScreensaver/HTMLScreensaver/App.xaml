@@ -4,6 +4,11 @@
              xmlns:local="clr-namespace:HTMLScreensaver"
              Startup="ApplicationStartup">
     <Application.Resources>
-
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles\Forms.xaml"/>
+                <ResourceDictionary Source="Styles\ColourPicker.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
