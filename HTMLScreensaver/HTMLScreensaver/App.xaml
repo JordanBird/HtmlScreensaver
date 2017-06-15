@@ -8,6 +8,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Styles\Forms.xaml"/>
                 <ResourceDictionary Source="Styles\ColourPicker.xaml"/>
+                <ResourceDictionary Source="Styles\ChromiumWebBrowser.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

@@ -7,24 +7,28 @@
         xmlns:wpf="clr-namespace:CefSharp.Wpf;assembly=CefSharp.Wpf"
         xmlns:local="clr-namespace:HTMLScreensaver.Views"
         mc:Ignorable="d"
-        Title="Configure" Height="400" Width="525">
+        Title="Configure" MinHeight="600" MinWidth="900" Height="720" Width="1280">
     <Grid Margin="10">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"></ColumnDefinition>
             <ColumnDefinition Width="2*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <Grid Grid.Row="0" Grid.Column="0">
+        <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+            <Label Style="{StaticResource Heading1}" Content="Configure" Grid.Row="0"></Label>
+        </StackPanel>
+        <Grid Grid.Row="1" Grid.Column="0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
-            <Label Content="Monitors" Grid.Row="0"></Label>
+            <Label Style="{StaticResource Heading2}" Content="Monitors" Grid.Row="0"></Label>
             <ListBox ItemsSource="{Binding MonitorNames}" SelectedValue="{Binding MonitorName}" Grid.Row="1">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
@@ -36,17 +40,17 @@
             </ListBox>
         </Grid>
 
-        <Grid Grid.Row="0" Grid.Column="1">
+        <Grid Grid.Row="1" Grid.Column="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
-            <Label Content="Preview" Grid.Row="0"></Label>
+            <Label Style="{StaticResource Heading2}" Content="Preview" Grid.Row="0"></Label>
             <wpf:ChromiumWebBrowser x:Name="Browser" Address="{Binding MonitorURL}" Grid.Row="1"/>
         </Grid>
 
-        <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
-            <Label x:Name="lblMonitorName" Content="{Binding Path=MonitorName, FallbackValue='Monitor Value'}"/>
+        <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
+            <Label x:Name="lblMonitorName" Style="{StaticResource Heading2}" Content="{Binding Path=MonitorName, FallbackValue=Monitor: Default}" ContentStringFormat="Monitor: {0}"/>
 
             <Label x:Name="lblMonitorURL" Content="Monitor URL" HorizontalContentAlignment="Stretch" />
             <TextBox x:Name="txtMonitorURL" Text="{Binding MonitorURL}" HorizontalContentAlignment="Stretch" AllowDrop="True"/>
@@ -55,7 +59,7 @@
             <xctk:ColorPicker Name="ClrPcker_Background" SelectedColor="{Binding MonitorColour}" DisplayColorAndName="True" ColorMode="ColorCanvas" Width="Auto" Height="28" HorizontalContentAlignment="Stretch"/>
         </StackPanel>
 
-        <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
+        <StackPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2">
             <Button Content="Save" Command="{Binding SaveCommand}" CommandParameter="{Binding Monitors}" Width="76" VerticalContentAlignment="Bottom" HorizontalAlignment="Right"/>
         </StackPanel>
     </Grid>

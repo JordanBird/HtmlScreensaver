@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HTMLScreensaver.Views"
         mc:Ignorable="d"
-        Title="Home" SizeToContent="Height" Width="210" ResizeMode="NoResize">
+        Title="Home" SizeToContent="Height" Width="400" ResizeMode="NoResize">
     <StackPanel Margin="10">
-        <Label Content="HTML Screensaver" VerticalAlignment="Top" FontWeight="Bold" Margin="0,0,0,10" />
+        <Label Style="{StaticResource Heading1}" Content="HTML Screensaver" VerticalAlignment="Top" FontWeight="Bold" Margin="0,0,0,10" />
         <TextBlock Style="{StaticResource Paragraph}" TextWrapping="Wrap" TextAlignment="Justify" Margin="0,0,0,10"><Run Text="Welcome to the HTMLScreensaver developer view."/><LineBreak/><Run/><LineBreak/><Run Text="The buttons below will open the corresponding views for testing."/></TextBlock>
         <Button x:Name="btnScreensaver" Command="{Binding OpenScreensaverCommand}" Content="Screensaver" Padding="5" Margin="0,0,0,5" />
         <Button x:Name="btnConfigure" Command="{Binding Path=OpenConfigureCommand}" Content="Configure" Padding="5" Margin="0,0,0,5" />
