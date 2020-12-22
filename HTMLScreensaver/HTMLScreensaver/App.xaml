@@ -9,6 +9,7 @@
                 <ResourceDictionary Source="Styles\Forms.xaml"/>
                 <ResourceDictionary Source="Styles\ColourPicker.xaml"/>
                 <ResourceDictionary Source="Styles\ChromiumWebBrowser.xaml"/>
+                <ResourceDictionary Source="Styles\ViewIdentify.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

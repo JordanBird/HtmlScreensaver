@@ -46,7 +46,8 @@ namespace HTMLScreensaver.ViewModels
         public IEnumerable<string> MonitorNames { get; set; }
 
         public ICommand SaveCommand { get; set; }
-        
+        public ICommand IdentifyCommand { get; set; }
+
         private void ChangeSelectedMonitor()
         {
             var monitorIndex = Monitors.FindIndex(x => x.MonitorName == MonitorName);

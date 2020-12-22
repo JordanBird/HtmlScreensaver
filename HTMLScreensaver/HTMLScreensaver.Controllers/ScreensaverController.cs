@@ -1,4 +1,5 @@
-﻿using HTMLScreensaver.Services;
+﻿using HTMLScreensaver.Controllers.Classes;
+using HTMLScreensaver.Services;
 using HTMLScreensaver.ViewModels;
 using HTMLScreensaver.ViewModels.Abstract;
 using HTMLScreensaver.Views;
@@ -31,18 +32,14 @@ namespace HTMLScreensaver.Controllers
                     colour = colours.Length < 4 ? "Black" : Color.FromArgb(byte.Parse(colours[0]), byte.Parse(colours[1]), byte.Parse(colours[2]), byte.Parse(colours[3])).ToString();
                 }
                 
-                Screensaver screensaver = new Screensaver()
+                var screensaver = ApplyScreenToWindow.Apply(new Screensaver()
                 {
-                    Left = screen.WorkingArea.Left,
-                    Top = screen.WorkingArea.Top,
-                    Width = screen.WorkingArea.Width,
-                    Height = screen.WorkingArea.Height,
                     DataContext = new ScreensaverViewModel()
                     {
-                        URL = screenSettings?.URL,
+                        URL = screenSettings?.URL ?? "",
                         BackgroundColour = colour
                     }
-                };
+                }, screen);
 
                 screensaver.Show();
 

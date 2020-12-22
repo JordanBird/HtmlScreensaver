@@ -85,6 +85,8 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\ApplyScreenToWindow.cs" />
+    <Compile Include="Classes\GetRatio.cs" />
     <Compile Include="Classes\Interop.cs" />
     <Compile Include="ConfigureController.cs" />
     <Compile Include="HomeController.cs" />

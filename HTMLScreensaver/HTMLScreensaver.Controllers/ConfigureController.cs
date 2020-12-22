@@ -39,7 +39,8 @@ namespace HTMLScreensaver.Controllers
                     Monitors = existing,
                     MonitorNames = existing.Select(x => x.MonitorName),
                     MonitorName = existing.FirstOrDefault().MonitorName,
-                    SaveCommand = new DelegateCommand<List<Monitor>>(SaveCommand)
+                    SaveCommand = new DelegateCommand<List<Monitor>>(SaveCommand),
+                    IdentifyCommand = new DelegateCommand(IdentifyCommand)
                 }
             };
             configure.Show();
@@ -55,6 +56,11 @@ namespace HTMLScreensaver.Controllers
             }
             
             settings.Save();
+        }
+
+        public void IdentifyCommand()
+        {
+            new IdentifyController().Show();
         }
     }
 }

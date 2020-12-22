@@ -62,5 +62,8 @@
         <StackPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2">
             <Button Content="Save" Command="{Binding SaveCommand}" CommandParameter="{Binding Monitors}" Width="76" VerticalContentAlignment="Bottom" HorizontalAlignment="Right"/>
         </StackPanel>
+        <StackPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="1">
+            <Button Content="Identify" Command="{Binding IdentifyCommand}" Width="76" VerticalContentAlignment="Bottom" HorizontalAlignment="Left"/>
+        </StackPanel>
     </Grid>
 </Window>
