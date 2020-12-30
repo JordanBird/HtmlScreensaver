@@ -1,4 +1,5 @@
 ﻿using CefSharp;
+using CefSharp.Wpf;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,8 +14,7 @@ namespace HTMLScreensaver.Services
         {
             var cefSettings = new CefSettings()
             {
-                PersistSessionCookies = true,
-                CachePath = "cache"
+                PersistSessionCookies = true
             };
 
             // Useful! http://peter.sh/experiments/chromium-command-line-switches/
