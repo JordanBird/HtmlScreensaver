@@ -1,4 +1,5 @@
 ﻿using HTMLScreensaver.Controllers.Classes;
+using HTMLScreensaver.Models;
 using HTMLScreensaver.Services;
 using HTMLScreensaver.ViewModels;
 using HTMLScreensaver.ViewModels.Abstract;
@@ -36,7 +37,7 @@ namespace HTMLScreensaver.Controllers
                 {
                     DataContext = new ScreensaverViewModel()
                     {
-                        URL = screenSettings?.URL ?? "",
+                        URL = GetURL(screenSettings),
                         BackgroundColour = colour
                     }
                 }, screen);
@@ -48,6 +49,18 @@ namespace HTMLScreensaver.Controllers
             }
 
             Mouse.OverrideCursor = System.Windows.Input.Cursors.None;
+        }
+
+        private string GetURL(Monitor screenSettings)
+        {
+            if (screenSettings == null || !screenSettings.URL.Contains(","))
+            {
+                return screenSettings?.URL ?? "";
+            }
+
+            var urls = screenSettings.URL.Split(',');
+
+            return urls[new Random().Next(0, urls.Length)];
         }
     }
 }
